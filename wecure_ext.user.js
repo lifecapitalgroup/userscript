@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name			wecure_ext
 // @namespace		http://lifecapital.eg
-// @version			1.0
+// @version			1.1
 // @description		weCure HIS extensions.
 // @author			Mustafa Elmalah
 // @match			http://his.lifeintl.net/ords/f?p=200:309*
@@ -33,7 +33,7 @@
 		let patient_data = {
 				wecure_code: patient_heading.split(" - ")[1],
 				name: patient_heading.split(" - ")[0],
-				phone: container.text().match(/\d{11}/g)?.[0]
+				phone: container.text().match(/\d{10-11}/g)?.[0]
 			};
 		
 		console.debug(patient_h1);
